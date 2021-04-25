@@ -16,6 +16,7 @@ const config = {
   projectVersion: pack.version,
   host: process.env.HOST || 'localhost',
   port: process.env.PORT || 9001,
+  auth: process.env.AUTH_SECRET || '',
   service: {
     enabled: process.env.ENABLED_SERVICE === 'true'
   },

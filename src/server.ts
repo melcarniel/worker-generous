@@ -19,7 +19,7 @@ export default class Server {
       await Server._instance.register(JWT)
 
       Server._instance.auth.strategy('jwt', 'jwt', {
-        key: 'stubJWT',
+        key: Config.auth,
         validate
       })
 
