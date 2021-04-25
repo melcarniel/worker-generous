@@ -1,5 +1,5 @@
 {
-  "name": "template-hapi",
+  "name": "worker-generous",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -43,7 +43,9 @@
     "hapi-auth-jwt2": "^10.2.0",
     "hapi-swagger": "^14.1.1",
     "joi": "^17.4.0",
+    "lodash": "^4.17.21",
     "retry-axios": "^2.4.0",
-    "winston": "^3.3.3"
+    "winston": "^3.3.3",
+    "xml2js": "^0.4.23"
   }
 }

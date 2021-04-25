@@ -12,10 +12,10 @@ const defaultRetry = { times: 3, delay: 5000 }
 
 const config = {
   env: process.env.NODE_ENV || 'development',
-  appName: process.env.APP_NAME ? process.env.APP_NAME : 'template-hapi',
+  appName: process.env.APP_NAME ? process.env.APP_NAME : 'worker-generous',
   projectVersion: pack.version,
-  host: 'localhost',
-  port: 9000,
+  host: process.env.HOST || 'localhost',
+  port: process.env.PORT || 9001,
   service: {
     enabled: process.env.ENABLED_SERVICE === 'true'
   },
@@ -23,7 +23,7 @@ const config = {
     swagger: {
       options: {
         info: {
-          title: 'Test API Documentation',
+          title: 'Worker Generous',
           version: pack.version
         },
         securityDefinitions: {
@@ -39,10 +39,16 @@ const config = {
     }
   },
   apis: {
-    starwars: {
-      url: process.env.STAR_WARS_API || 'https://swapi.dev/api/',
-      retry: Number(process.env.STAR_WARS_RETRY_TIMES) || defaultRetry.times,
-      delay: Number(process.env.STAR_WARS_RETRY_DELAY) || defaultRetry.delay
+    netlify: {
+      url: process.env.NETLIFY_API || '',
+      retry: Number(process.env.NETLIFY_RETRY_TIMES) || defaultRetry.times,
+      delay: Number(process.env.NETLIFY_RETRY_DELAY) || defaultRetry.delay
+    },
+    commerce: {
+      url: process.env.COMMERCE_PRODUCTS_API || '',
+      retry: Number(process.env.COMMERCE_RETRY_TIMES) || defaultRetry.times,
+      delay: Number(process.env.COMMERCE_RETRY_DELAY) || defaultRetry.delay,
+      token: process.env.COMMERCE_PRODUCTS_TOKEN || ''
     }
   }
 }

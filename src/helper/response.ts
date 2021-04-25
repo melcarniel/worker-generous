@@ -19,14 +19,14 @@ interface IResponse<T> {
   errors: IResponseError[]
 }
 
-interface IResponseOptions<T> {
-  value?: T | null | undefined
+interface IResponseOptions {
+  value?: any | null | undefined
   boom?: Boom<any> | null | undefined
 }
 
 export default function createResponse<T> (
   request: Hapi.Request,
-  { value = null, boom = null }: IResponseOptions<T>
+  { value = null, boom = null }: IResponseOptions
 ): IResponse<T> {
   const errors: IResponseError[] = []
   const data: any = []
@@ -38,7 +38,6 @@ export default function createResponse<T> (
       message: boom.output.payload.message
     })
   }
-
   if (value && data) {
     if (Array.isArray(value)) {
       data.push(...value)
