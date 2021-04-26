@@ -45,7 +45,7 @@ export default class Server {
     }
   }
 
-  public static async stop (): Promise<Error> {
+  public static async stop (): Promise<any> {
     Logger.info('Server - Stopping execution')
 
     return Server._instance.stop()

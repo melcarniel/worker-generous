@@ -7,7 +7,7 @@ export default class WorkerRoutesController {
   private readonly businessWorker: WorkerBusiness = new WorkerBusiness()
 
   public syncProducts = async (
-    request: Hapi.RequestToolkit, toolkit: Hapi.ResponseToolkit
+    request: Hapi.Request, toolkit: Hapi.ResponseToolkit
   ): Promise<any> => {
     try {
       const data = await this.businessWorker.syncProducts()

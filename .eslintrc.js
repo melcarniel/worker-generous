@@ -12,6 +12,7 @@ module.exports = {
     '@typescript-eslint/restrict-template-expressions': 'off',
     '@typescript-eslint/no-extraneous-class': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
-    '@typescript-eslint/restrict-plus-operands': 'off'
+    '@typescript-eslint/restrict-plus-operands': 'off',
+    '@typescript-eslint/return-await': 'off'
   }
 }

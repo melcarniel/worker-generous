@@ -1,5 +1,4 @@
 import * as Hapi from '@hapi/hapi'
-import Boom from '@hapi/boom'
 
 interface IResponseMeta {
   operation?: string
@@ -21,7 +20,7 @@ interface IResponse<T> {
 
 interface IResponseOptions {
   value?: any | null | undefined
-  boom?: Boom<any> | null | undefined
+  boom?: any | null | undefined
 }
 
 export default function createResponse<T> (
